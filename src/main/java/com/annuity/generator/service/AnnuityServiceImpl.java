@@ -60,31 +60,5 @@ public class AnnuityServiceImpl implements AnnuityService {
 		return annuityPlan;
 	}
 
-	public static void main(String[] args) {
-//		double annuity = (5000 * (.05 / 12)) / (1 - Math.pow(1 + (.05 / 12), -24));
-//		System.out.println(annuity);
-		AnnuityServiceImpl a = new AnnuityServiceImpl();
-		LoanDetails l = new LoanDetails();
-		l.setDuration(24);
-		l.setStartDate(new Date());
-		l.setNominalRate(5f);
-		l.setLoanAmount(5000d);
-		System.out.println("hi");
-		List<AnnuityPlan> apl = a.getAnnuityPlan(l);
-		System.out.println(a.getAnnuityPlan(l).size());
-		for (AnnuityPlan ap : apl) {
-			System.out.println(ap.getBorrowerPaymentAmount());
-			System.out.println(ap.getDate());
-			System.out.println(ap.getInitialOutstandingPrincipal());
-			System.out.println(ap.getInterest());
-			System.out.println(ap.getPrincipal());
-			System.out.println(ap.getRemainingOutstandingPrincipal());
-		}
-
-	}
-
-//	private double RoundTo2Decimals(double val) {
-//		DecimalFormat df2 = new DecimalFormat("###.##");
-//		return Double.valueOf(df2.format(val));
-//	}
+	
 }
